@@ -1,0 +1,124 @@
+/* imported google fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+/* universal selector // making box-sizing easier to understand */
+* {
+  /* putting padding and the boader inside width */
+  box-sizing: border-box;
+  /* remove default settings; more advanced version for real world projects */
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* sans-serif is fall back if Lato doesn't exist */
+  font-family: Lato, sans-serif;
+}
+
+/* Industry standard practice // use it to any element and center it */
+.container {
+  max-width: 960px;
+  margin: 0 auto; 
+  /* centers it */
+}
+.nav {
+  /* make the change more smooth using transition*/
+  transition: 0.3s all ease;
+  position: absolute;
+  width: 260px;
+  /* initially hidden from the page */
+  left: -260px;
+  height: 100%;
+  background: #27292F;
+  /* sit on top of everything */
+  z-index: 9999;
+}
+
+/* this class is to be added using js to affect nav class to open nav */
+.open {
+  left: 0px;
+}
+.menu {
+  /* get rid of the bullets */
+  list-style-type: none;
+}
+.menu__item {
+  font-size: 1.4rem;
+  color: #eee;
+  border-bottom: 1px solid #333;
+  padding: 1.2rem;
+  text-transform: uppercase;
+  /* smooth effect when there is a change */
+  transition: 0.3s all ease;
+}
+.menu__item:hover {
+  background: #111;
+  cursor: pointer;
+}
+/**** hamburger icon ****/
+.hamburger {
+  position: absolute;
+  top: 10px;
+  right: -50px;
+}
+
+/* changes the pointer when we hover over it */
+.hamburger:hover {
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  background: #222;
+  margin: 6px 0;
+  height: 6px;
+  width: 36px;
+  border-radius: 2px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* preparing for js */
+/* when there is a change this effect should happen */
+.change.first-bar {
+  top: 11px;
+  transform: rotate(45deg);
+}
+.change.second-bar {
+  /* make it disappear */
+  opacity: 0;
+}
+.change.third-bar {
+  bottom: 13px;
+  transform: rotate(-45deg);
+}
+
+/********** Main Content *********/
+
+.content {
+  padding: 2rem;
+  transition: 0.3s all ease;
+
+}
+
+/* js */
+.shift {
+  margin-left: 260px;
+}
+
+.content__heading {
+  text-align: center; 
+  /* spacing around blocks */
+  padding: 2rem;
+
+}
+.content__details {
+  padding: 2rem;
+  letter-spacing: 1px;
+}
+.content__image {
+  padding: 1rem;
+  width: 100%;
+  /* reponsive image */
+  height: auto;
+
+}
